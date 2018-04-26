@@ -1,0 +1,54 @@
+// Media Queries
+$tablet-width: 768px
+$desktop-width: 1200px
+
+@mixin tablet
+  @media (min-width: #{$tablet-width})
+    @content
+
+@mixin desktop
+  @media (min-width: #{$desktop-width})
+    @content
+
+$retina: 320px
+
+$section-padding: 2em
+
+
+// Base Rules
+*
+  margin: 0
+  padding: 0
+
+*, *:before, *:after
+  box-sizing: border-box
+
+body,
+html
+  height: 100%
+
+body
+  background-color: $white
+  width: 100%
+
+img
+  display: block
+  margin: 0 auto
+
+.container
+  width: 100%
+  margin: 0 auto
+
+  @include tablet
+    width: $tablet-width
+    padding: 0 1em
+
+  @include desktop
+    width: $desktop-width
+    padding: 0 1em
+
+.hidden-mobile
+  display: none
+
+  @include tablet
+    display: block
